@@ -1,0 +1,16 @@
+.jumbotron {
+  text-align: center;
+  background-color: #FF706F;
+}
+
+body {
+  background-color: #FF8A87;
+}
+
+li {
+  list-style-type: none;
+}
+
+#pizzaResult {
+  display: none;
+}
