@@ -42,3 +42,28 @@ $(function() {
     $("#pizzaResult").show();
   });
 });
+
+
+
+
+
+
+// -use jquery to identify values in checkboxes selected (loop) 
+// -append results into Pizzainfo on bottom of jquery
+// $("input[type='radio']:checked").forEach(function(){
+// if (this.value === "Sausage") {
+//   return "Sausage";
+// } else if (this.value === "Ham") {
+//   return "Ham";
+// } else if (this.value === "Pepperoni") {
+//   return "Pepperoni";
+// } else if (this.value === "Mushrooms") {
+//   return "Mushrooms";
+// } else if (this.value === "Tofu") {
+//   return "Tofu";
+// } else if (this.value === "Pineapple") {
+//   return "Pineapple";
+// } else {
+//   alert("Please select your toppings");
+// }
+// });
