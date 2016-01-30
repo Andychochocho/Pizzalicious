@@ -1,6 +1,6 @@
 # Andrew Cho
 
-#### A site to test my skills for week three at Epicodus
+#### A site to test my skills for week four at Epicodus
 
 #### By Andrew Cho
 
