@@ -13,4 +13,16 @@ li {
 
 #pizzaResult {
   display: none;
+  font-weight: bold;
+  font-size: 22px;
+}
+
+#priceMenu {
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+h3 {
+  font-size: 40px;
 }

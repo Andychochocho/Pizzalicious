@@ -1,7 +1,8 @@
 // BUSINESS LOGIC
-function Pizza (size,toppings,quantity) {
+function Pizza (size,meatTopping,otherTopping,quantity) {
   this.size = size;
-  this.toppings = toppings;
+  this.meatTopping = meatTopping;
+  this.otherTopping = otherTopping;
   this.quantity = quantity;
 }
 
@@ -18,23 +19,26 @@ Pizza.prototype.price = function() {
 }
 
 // USER INTERFACE
-// $(function() {
-//   $("#buyButton").click(function(event){
-//     event.preventDefault();
-//       // debugger;
-//     var size = $("select#sizes").val();
-//     var toppings = $("#sausage:checked").val();
-//
-//
-//     var quantity = $("select#quantity").val();
-//     var newPizza = new Pizza (size, toppings,quantity);
-//
-//     $("#pizzaInfo").empty();
-//     $("#pizzaPriceList").empty();
-//
-//     $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your toppings: " + toppings + "</li>" + "<li> Your quantity: " + quantity + "</li>");
-//     $("#pizzaPriceList").append("<li>$" + newPizza.price() + ".00 </li>");
-//
-//     $("#pizzaResult").show();
-//   });
-// });
+$(function() {
+  $("#buyButton").click(function(event){
+    event.preventDefault();
+    var size = $("select#sizes").val();
+    var quantity = $("select#quantity").val();
+    var meatToppings = $("select#meatTopping").val();
+    var otherToppings = $("select#otherTopping").val();
+    var newPizza = new Pizza (size,meatTopping,otherTopping,quantity);
+    // var toppings = $("#sausage:checked").val();
+    // $("#topping").each(function(){
+    //   var inputtedTopping1 = $(this).("#sausage:checked").val();
+    // });
+
+    $("#pizzaInfo").empty();
+    $("#pizzaPriceList").empty();
+
+    $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your Meat Topping: " + meatToppings + "</li>" + "<li> Your Other Topping: " + otherToppings + "</li>" +"<li> Your quantity: " + quantity + "</li>");
+    // debugger;
+    $("#pizzaPriceList").append("<li>$" + newPizza.price() + ".00 </li>");
+
+    $("#pizzaResult").show();
+  });
+});
