@@ -1,8 +1,7 @@
 // BUSINESS LOGIC
-function Pizza (size,meatTopping,otherTopping,quantity) {
+function Pizza (size,toppings,quantity) {
   this.size = size;
-  this.meatTopping = meatTopping;
-  this.otherTopping = otherTopping;
+  this.toppings = toppings;
   this.quantity = quantity;
 }
 
@@ -24,18 +23,14 @@ $(function() {
     event.preventDefault();
     var size = $("select#sizes").val();
     var quantity = $("select#quantity").val();
-    var meatToppings = $("select#meatTopping").val();
-    var otherToppings = $("select#otherTopping").val();
-    var newPizza = new Pizza (size,meatTopping,otherTopping,quantity);
-    // var toppings = $("#sausage:checked").val();
-    // $("#topping").each(function(){
-    //   var inputtedTopping1 = $(this).("#sausage:checked").val();
-    // });
+    var newPizza = new Pizza (size,toppings,quantity);
+    var toppings = []
+
 
     $("#pizzaInfo").empty();
     $("#pizzaPriceList").empty();
 
-    $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your Meat Topping: " + meatToppings + "</li>" + "<li> Your Other Topping: " + otherToppings + "</li>" +"<li> Your quantity: " + quantity + "</li>");
+    $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your Topping: " + toppings + "</li>" + "<li> Your quantity: " + quantity + "</li>");
     // debugger;
     $("#pizzaPriceList").append("<li>$" + newPizza.price() + ".00 </li>");
 
@@ -48,8 +43,9 @@ $(function() {
 
 
 
-// -use jquery to identify values in checkboxes selected (loop) 
+// -use jquery to identify values in checkboxes selected (loop)
 // -append results into Pizzainfo on bottom of jquery
+
 // $("input[type='radio']:checked").forEach(function(){
 // if (this.value === "Sausage") {
 //   return "Sausage";
