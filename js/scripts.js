@@ -22,15 +22,18 @@ $(function() {
   $("#buyButton").click(function(event){
     event.preventDefault();
     var size = $("select#sizes").val();
+    var toppings = []
     var quantity = $("select#quantity").val();
     var newPizza = new Pizza (size,toppings,quantity);
-    var toppings = []
-
 
     $("#pizzaInfo").empty();
     $("#pizzaPriceList").empty();
+debugger;
+    $.each($("input[name='checkButton']:checked"), function(){
+     toppings.push($(this).val());
+     });
 
-    $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your Topping: " + toppings + "</li>" + "<li> Your quantity: " + quantity + "</li>");
+    $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your Topping: " + toppings + "</li>" + "<li> Your Quantity: " + quantity + "</li>");
     // debugger;
     $("#pizzaPriceList").append("<li>$" + newPizza.price() + ".00 </li>");
 
