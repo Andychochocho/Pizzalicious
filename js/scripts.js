@@ -7,13 +7,13 @@ function Pizza (size,toppings,quantity) {
 
 Pizza.prototype.price = function() {
   if (this.size === "Small") {
-    return 8 * this.quantity;
+    return 8 * this.quantity + this.toppings.length;
   } else if (this.size === "Medium") {
-      return 10 * this.quantity;
+      return 10 * this.quantity + this.toppings.length;
   } else if (this.size === "Large") {
-      return 12 * this.quantity;
+      return 12 * this.quantity + this.toppings.length;
   } else {
-      return 14 * this.quantity;
+      return 14 * this.quantity + this.toppings.length;
   }
 }
 
@@ -28,41 +28,14 @@ $(function() {
 
     $("#pizzaInfo").empty();
     $("#pizzaPriceList").empty();
-debugger;
     $.each($("input[name='checkButton']:checked"), function(){
      toppings.push($(this).val());
      });
 
-    $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your Topping: " + toppings + "</li>" + "<li> Your Quantity: " + quantity + "</li>");
-    // debugger;
+    $("#pizzaInfo").append("<li> Your size: " + size + "</li>" + "<li> Your Toppings: " + toppings.join(", ") + "</li>" + "<li> Your Quantity: " + quantity + "</li>");
+
     $("#pizzaPriceList").append("<li>$" + newPizza.price() + ".00 </li>");
 
     $("#pizzaResult").show();
   });
 });
-
-
-
-
-
-
-// -use jquery to identify values in checkboxes selected (loop)
-// -append results into Pizzainfo on bottom of jquery
-
-// $("input[type='radio']:checked").forEach(function(){
-// if (this.value === "Sausage") {
-//   return "Sausage";
-// } else if (this.value === "Ham") {
-//   return "Ham";
-// } else if (this.value === "Pepperoni") {
-//   return "Pepperoni";
-// } else if (this.value === "Mushrooms") {
-//   return "Mushrooms";
-// } else if (this.value === "Tofu") {
-//   return "Tofu";
-// } else if (this.value === "Pineapple") {
-//   return "Pineapple";
-// } else {
-//   alert("Please select your toppings");
-// }
-// });

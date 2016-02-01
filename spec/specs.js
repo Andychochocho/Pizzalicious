@@ -10,6 +10,6 @@ describe("Pizza", function(){
 describe("Pizza.Prototype.Price", function(){
   it("will calculate pizza's cost", function(){
     var newPizza = new Pizza ("Medium", ["Ham"], 2);
-    expect(newPizza.price()).to.equal(20)
+    expect(newPizza.price()).to.equal(21)
   });
 });
